@@ -13,6 +13,6 @@ class MiniTest extends TutorialFunSuite {
       def f(a: Rep[Int]): Rep[Int] = if (a==0) 0 else (a+1)
       def snippet(a: Rep[Int]) = f(f(f(a)))
     }
-    exec("stub", snippet.code)
+    check("stub", snippet.code)
   }
 }
