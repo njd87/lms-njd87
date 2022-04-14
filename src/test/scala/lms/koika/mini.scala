@@ -5,7 +5,6 @@ import lms.core.virtualize
 import lms.macros.SourceContext
 
 @virtualize
-@virtualize
 class MiniTest extends TutorialFunSuite {
   val under = "mini_"
 
