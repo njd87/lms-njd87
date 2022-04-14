@@ -7,3 +7,6 @@ An early experiment.
 
 ## Run
 - `sbt test`
+
+## Troubleshoot
+- It works in Java v1.8.
