@@ -87,4 +87,41 @@ class InterpTest extends TutorialFunSuite {
     exec("4", snippet.code)
   }
 
+  test("interp 5") {
+    val snippet = new DslDriverX[Array[Int],Array[Int]] with Interp {
+      def snippet(pc_reg: Rep[Array[Int]]) = {
+        pc_reg(0) = 0
+        step(prog, pc_reg)
+        step(prog, pc_reg)
+        step(prog, pc_reg)
+        step(prog, pc_reg)
+        pc_reg
+      }
+    }
+    // this program should simplify the branches, but it does not
+    exec("5", snippet.code)
+  }
+
+  test("simplify 5") {
+    val snippet = new DslDriverX[Array[Int],Array[Int]] with Interp {
+      def snippet(a: Rep[Array[Int]]) = {
+        a(0) = 0
+        if (a(0) == -1) {
+          a(0) = 33
+        }
+        a(1) = 1 // this prevents optimization!
+        if (a(0) == 0) {
+          a(0) = 1
+        }
+        if (a(0) == 1) {
+          a(0) = 2
+        }
+        if (a(0) == 2) {
+          a(0) = 3
+        }
+        a
+      }
+    }
+    exec("5s", snippet.code)
+  }
 }
