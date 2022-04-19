@@ -15,4 +15,27 @@ class MiniTest extends TutorialFunSuite {
     }
     check("stub", snippet.code)
   }
+
+  test("mini stub 2") {
+    val snippet = new DslDriver[Int,Int] {
+      def snippet(a: Rep[Int]) = {
+        val pc = var_new(0) // vs var_new(a)
+        val state = var_new(0)
+        for (i <- (0 until 10):Range) {
+          if (pc == 0) {
+            state += 1
+            pc = 1
+          } else if (pc == 1) {
+            state -= 1
+            pc = 2
+          } else {
+            state += 1
+            pc = 0
+          }
+        }
+        state
+      }
+    }
+    exec("stub2", snippet.code)
+  }
 }
