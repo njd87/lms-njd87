@@ -6,6 +6,7 @@
       so that branches on PC can be optimized:
       https://github.com/namin/lms-clean/commit/ade5a1b044ca35da64179499fb8302e2a26476d2
 - [ ] this extension wasn't enough, we really want `if` hoisting
+- [ ] optimize per program path
 - [ ] read LMS paper on Staged Abstract Interpreters:
       https://www.cs.purdue.edu/homes/rompf/papers/wei-oopsla19.pdf
 - [ ] find analyses for non-interference:
