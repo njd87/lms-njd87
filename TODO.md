@@ -2,8 +2,9 @@
 
 - [x] file LMS bug regarding array nested in collection:
       https://github.com/TiarkRompf/lms-clean/issues/122
-- [ ] extend LMS to that it considers chains of writes when reading
+- [x] extend LMS to that it considers chains of writes when reading
       so that branches on PC can be optimized
+- [ ] this extension wasn't enough, we really want `if` hoisting
 - [ ] read LMS paper on Staged Abstract Interpreters:
       https://www.cs.purdue.edu/homes/rompf/papers/wei-oopsla19.pdf
 - [ ] find analyses for non-interference:
