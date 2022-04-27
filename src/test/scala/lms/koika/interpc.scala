@@ -11,7 +11,7 @@ class InterpCTest extends TutorialFunSuite {
   override def exec(label: String, code: String, suffix: String = "c") =
     super.exec(label, code, suffix)
 
-  trait InterpC extends Dsl {
+  trait InterpC extends Dsl with lms.thirdparty.CLibs {
     abstract sealed class Instruction
     case class Add(rd: Int, rs1: Int, rs2: Int) extends Instruction
     case class Branch(rs: Int, target: Int) extends Instruction
@@ -46,15 +46,21 @@ class InterpCTest extends TutorialFunSuite {
     }
   }
 
+  abstract class DslDriverX[A:Manifest,B:Manifest] extends DslDriverC[A,B] { q =>
+    override val codegen = new DslGenC with lms.thirdparty.CCodeGenLibs {
+      val IR: q.type = q
+    }
+  }
+
   test("interp 1") {
-    val snippet = new DslDriverC[Int,Int] with InterpC {
+    val snippet = new DslDriverX[Int,Int] with InterpC {
       def snippet(a: Rep[Int]) = id(id(a))
     }
     exec("1", snippet.code)
   }
 
   test("interp 2") {
-    val snippet = new DslDriverC[Array[Int],Array[Int]] with InterpC {
+    val snippet = new DslDriverX[Array[Int],Array[Int]] with InterpC {
       def snippet(pc_reg: Rep[Array[Int]]) = {
         step_aux(prog, pc_reg, 0)
         pc_reg
@@ -64,7 +70,7 @@ class InterpCTest extends TutorialFunSuite {
   }
 
   test("interp 3") {
-    val snippet = new DslDriverC[Array[Int],Array[Int]] with InterpC {
+    val snippet = new DslDriverX[Array[Int],Array[Int]] with InterpC {
       def snippet(pc_reg: Rep[Array[Int]]) = {
         step(prog, pc_reg)
         pc_reg
@@ -74,7 +80,7 @@ class InterpCTest extends TutorialFunSuite {
   }
 
   test("interp 4") {
-    val snippet = new DslDriverC[Array[Int],Array[Int]] with InterpC {
+    val snippet = new DslDriverX[Array[Int],Array[Int]] with InterpC {
       def snippet(pc_reg: Rep[Array[Int]]) = {
         pc_reg(0) = 0
         step(prog, pc_reg)
@@ -85,7 +91,7 @@ class InterpCTest extends TutorialFunSuite {
   }
 
   test("interp 5") {
-    val snippet = new DslDriverC[Array[Int],Array[Int]] with InterpC {
+    val snippet = new DslDriverX[Array[Int],Array[Int]] with InterpC {
       def snippet(pc_reg: Rep[Array[Int]]) = {
         pc_reg(0) = 0
         step(prog, pc_reg)
