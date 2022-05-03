@@ -75,6 +75,7 @@ class InterpCTest extends TutorialFunSuite {
     def id(a: Rep[Int]) = a
 
     def fetch(s: Rep[stateT]): Unit = {
+      // We should log in somewhere the sequence of pc that we generate here
       if ( state_f2d_valid(s) == unit(0)) {
         set_state_f2d_valid(s,unit(1))
         set_state_f2d_epoch(s, state_epoch(s))
