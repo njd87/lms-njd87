@@ -1,3 +1,4 @@
+
 package lms.koika
 
 import lms.core.stub._
@@ -53,7 +54,7 @@ class InterpTest extends TutorialFunSuite {
     val snippet = new DslDriverX[Int,Int] with Interp {
       def snippet(a: Rep[Int]) = id(id(a))
     }
-    exec("1", snippet.code)
+    check("1", snippet.code)
   }
 
   test("interp 2") {
@@ -63,7 +64,7 @@ class InterpTest extends TutorialFunSuite {
         pc_reg
       }
     }
-    exec("2", snippet.code)
+    check("2", snippet.code)
   }
 
   test("interp 3") {
@@ -73,7 +74,7 @@ class InterpTest extends TutorialFunSuite {
         pc_reg
       }
     }
-    exec("3", snippet.code)
+    check("3", snippet.code)
   }
 
   test("interp 4") {
@@ -84,7 +85,7 @@ class InterpTest extends TutorialFunSuite {
         pc_reg
       }
     }
-    exec("4", snippet.code)
+    check("4", snippet.code)
   }
 
   test("interp 5") {
@@ -99,7 +100,7 @@ class InterpTest extends TutorialFunSuite {
       }
     }
     // this program should simplify the branches, but it does not
-    exec("5", snippet.code)
+    check("5", snippet.code)
   }
 
   test("simplify 5") {
@@ -122,6 +123,6 @@ class InterpTest extends TutorialFunSuite {
         a
       }
     }
-    exec("5s", snippet.code)
+    check("5s", snippet.code)
   }
 }

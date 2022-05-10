@@ -11,6 +11,9 @@ class InterpCTest extends TutorialFunSuite {
   override def exec(label: String, code: String, suffix: String = "c") =
     super.exec(label, code, suffix)
 
+  override def check(label: String, code: String, suffix: String = "c") =
+    super.check(label, code, suffix)
+
   class stateT
   trait InterpC extends Dsl with lms.thirdparty.CLibs {
     // TODO: the file state.h should be defined to contain those operations
@@ -164,14 +167,14 @@ class InterpCTest extends TutorialFunSuite {
         libFunction[Int]("myStruct_getField", Unwrap(s))(Seq(0), Seq(), Set[Int]())
       }
     }
-    exec("struct_1", snippet.code)
+    check("struct_1", snippet.code)
   }
 
   test("interp 1") {
     val snippet = new DslDriverX[Int,Int] with InterpC {
       def snippet(a: Rep[Int]) = id(id(a))
     }
-    exec("1", snippet.code)
+    check("1", snippet.code)
   }
 
   test("interp 2") {
@@ -181,7 +184,7 @@ class InterpCTest extends TutorialFunSuite {
         s
       }
     }
-    exec("2", snippet.code)
+    check("2", snippet.code)
   }
 
   test("interp 3") {
@@ -191,7 +194,7 @@ class InterpCTest extends TutorialFunSuite {
         s
       }
     }
-    exec("3", snippet.code)
+    check("3", snippet.code)
   }
 
   test("interp 4") {
@@ -203,7 +206,7 @@ class InterpCTest extends TutorialFunSuite {
       }
     }
     // TODO: this no longer optimizes.
-    exec("4", snippet.code)
+    check("4", snippet.code)
   }
 
   test("interp 5") {
@@ -218,7 +221,7 @@ class InterpCTest extends TutorialFunSuite {
       }
     }
     // this program should simplify the branches, but it does not
-    exec("5", snippet.code)
+    check("5", snippet.code)
   }
   test("interp 6") {
     val snippet = new DslDriverX[stateT,stateT] with InterpC {
@@ -236,6 +239,6 @@ class InterpCTest extends TutorialFunSuite {
       }
     }
     // this program should simplify the branches, but it does not
-    exec("6", snippet.code)
+    check("6", snippet.code)
   }
 }

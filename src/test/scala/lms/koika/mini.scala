@@ -36,6 +36,6 @@ class MiniTest extends TutorialFunSuite {
         state
       }
     }
-    exec("stub2", snippet.code)
+    check("stub2", snippet.code)
   }
 }
