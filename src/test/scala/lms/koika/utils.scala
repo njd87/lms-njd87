@@ -12,7 +12,7 @@ trait LibSuite extends FunSuite {
 }
 
 trait TutorialFunSuite extends LibSuite with EmbeddedControls {
-  val overwriteCheckFiles = true // should be false; temporary set to true only to simplify development
+  val overwriteCheckFiles = false // should be false; temporary set to true only to simplify development
 
   val prefix = "src/out/"
   val under: String
