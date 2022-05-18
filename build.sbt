@@ -6,8 +6,6 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 
 libraryDependencies += "org.scalatest" % "scalatest_2.12" % "3.0.4"
 
-libraryDependencies += "org.scala-lang.virtualized" % "lms-clean_2.12" % "0.0.1-SNAPSHOT"
-
 libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value % "compile"
 
 libraryDependencies += "org.scala-lang" % "scala-library" % scalaVersion.value % "compile"
@@ -23,8 +21,8 @@ addCompilerPlugin("org.scalamacros" % "paradise" % paradiseVersion cross CrossVe
 // tests are not thread safe
 parallelExecution in Test := false
 
-lazy val koika = (project in file("."))//.dependsOn(lms % "test->test")
+lazy val koika = (project in file(".")).dependsOn(lms % "test->test")
   // .settings(fork := true)
 
-//lazy val lms = ProjectRef(file("../lms-clean"), "lms-clean")
-//  // .settings(fork := true)
+lazy val lms = ProjectRef(file("../lms-clean"), "lms-clean")
+  // .settings(fork := true)

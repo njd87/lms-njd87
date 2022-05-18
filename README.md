@@ -4,11 +4,6 @@ An early experiment.
 
 ## Install
 - in parent directory: `git clone https://github.com/TiarkRompf/lms-clean.git`
-- `cd lms-clean`
-- `git remote add namin git@github.com:namin/lms-clean.git`
-- `git fetch --all`
-- `git checkout vscode`
-- `sbt publishLocal`
 
 ## Run
 - `sbt test`
