@@ -1,4 +1,23 @@
-# TODOs
+# Learn
+
+- [ ] Understand the LMS Clean code for arrays
+  - [ ] See `lms-clean/src/main/scala/lms/collection/ArrayOps.scala`
+- [ ] Understand the LMS Clean support for C structs and library functions
+  - [ ] See `lms-clean/src/main/scala/lms/thirdparty/c_lib_utils.scala`
+- [ ] Understand the `GraphBuilderOpt` rewrite optimizations
+- [ ] Understand the effect system
+
+# Tasks
+
+- [ ] Devise a way to use C structs that preserve the read-write optimizations similar to arrays and vars
+  - [ ] Design a new struct mechanism with explicit read/write field accesses
+- [ ] Optimize if structure further
+  - [ ] Experiment with this change: https://github.com/namin/lms-clean/commit/ade5a1b044ca35da64179499fb8302e2a26476d2
+    - [ ] See what changes in the generated code, and why it isn't enough
+- [ ] Make sure the generated code can compile and run
+  - [ ] Have a small example with structs and library functions that compiles and runs
+
+# Notes
 
 - [x] file LMS bug regarding array nested in collection:
       https://github.com/TiarkRompf/lms-clean/issues/122
