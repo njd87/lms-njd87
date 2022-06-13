@@ -163,8 +163,15 @@ class InterpCTest extends TutorialFunSuite {
     val snippet = new DslDriverX[Int,Int] with InterpC {
       class myStructT
       def snippet(a: Rep[Int]) = {
-        val s = newStruct[myStructT]("myStruct_t")
-        libFunction[Int]("myStruct_getField", Unwrap(s))(Seq(0), Seq(), Set[Int]())
+        // val s = newStruct[myStructT]("myStruct_t")
+        // libFunction[Int]("myStruct_getField", Unwrap(s))(Seq(0), Seq(), Set[Int]())
+        val s = newState()
+        set_state_pc(s, 5)
+        val s2 = state_pc(s)
+        val s5 = newState()
+        val s3 = state_epoch(s)
+        s3        
+
       }
     }
     check("struct_1", snippet.code)
@@ -224,21 +231,31 @@ class InterpCTest extends TutorialFunSuite {
     check("5", snippet.code)
   }
   test("interp 6") {
-    val snippet = new DslDriverX[stateT,stateT] with InterpC {
-      def snippet(s: Rep[stateT]) = {
-        set_state_pc(s, 0)
-        fetch(s)
-        execute(prog,s)
-        fetch(s)
-        execute(prog,s)
-        fetch(s)
-        execute(prog,s)
-        fetch(s)
-        execute(prog,s)
-        s
+    val snippet = new DslDriverX[Array[Boolean],Boolean] with InterpC {
+      def snippet(a: Rep[Array[Boolean]]) = {
+        val c = a(0)
+        var d = false
+        a(1) = true
+        if (c)
+        {
+          a(1) = true
+        }
+        else
+        {
+          d = a(1)
+        }
+        if (d)
+        {
+          a(2) = true
+        }
+        else
+        {
+          a(2) = false
+        }
+        a(2)
       }
     }
     // this program should simplify the branches, but it does not
-    check("6", snippet.code)
+    check("6", snippet.code) 
   }
 }

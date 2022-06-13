@@ -1,0 +1,59 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /Users/nickydtricky/Desktop/TmpDirectory/lms-koika/target/scala-2.12/test-classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$DslDriverX$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Instruction.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$stateT.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Branch$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Add.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Branch.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$2$myStructT.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Add$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$DslDriverX.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$DslDriverX$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Instruction.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$stateT.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Branch$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Add.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Branch.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$2$myStructT.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Add$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$DslDriverX.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$DslDriverX$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Instruction.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$stateT.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Branch$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Add.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Branch.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$2$myStructT.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$InterpC$Add$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest$DslDriverX.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	InterpCTest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/nickydtricky/Desktop/TmpDirectory/lms-koika/target/scala-2.12/test-classes.bak[0m

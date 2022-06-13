@@ -46,6 +46,17 @@ int main(int argc, char *argv[]) {
     printf("usage: %s <arg>\n", argv[0]);
     return 0;
   }
-  Snippet();
+
+  int n[2] ;
+  n[0] = 0 ;
+  n[1] = 0 ;
+  int* result = Snippet(n);
+
+  for (int i = 0; i < 2; i++)
+  {
+    printf("%i", result[0]);
+    printf("\n");
+  }
+
   return 0;
 }

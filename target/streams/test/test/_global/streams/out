@@ -1,0 +1,347 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(lms.koika.InterpCTest, org.scalatest.tools.Framework$$anon$1@2da75794, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mInterpCTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- struct 1 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...<stdlib.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include [<state.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include <stdio.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include <stdint.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include <stdbool.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /**************** Snippet ****************/[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  int Snippet(int x0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    myStruct_t x1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return myStruct_getField](x1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /***********..." did not equal "...<stdlib.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include ["state.h"[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include <stdio.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include <stdint.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  #include <stdbool.h>[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /**************** Snippet ****************/[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  int Snippet(int x0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    state_t x1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    set_state_pc(x1, 5);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return state_epoch](x1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /***********..." src/out/interpc_struct_1.check.c (utils.scala:64)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 5[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- interp 6 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...t ****************/[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  [interpctest.type#lms.koika.interpctest$statet Snippet(interpctest.type#lms.koika.interpctest$statet x0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    set_state_pc(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_epoch(x0, state_epoch(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x1 = state_btb(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_pc(x0, state_pc(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_ppc(x0, x1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_pc(x0, x1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 1) if (state_f2d_epoch(x0) == state_epoch(x0)) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x2 = state_f2d_pc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x3 = state_f2d_ppc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x2 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_reg(x0, 0, state_reg(x0, 0) + state_reg(x0, 0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (x3 != 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x2 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_btb(x0, state_reg(x0, 0), 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (state_reg(x0, 0) == 0) if (x3 != 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        else if (x3 != 2) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 2);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    } else set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_epoch(x0, state_epoch(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x4 = state_btb(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_pc(x0, state_pc(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_ppc(x0, x4);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_pc(x0, x4);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 1) if (state_f2d_epoch(x0) == state_epoch(x0)) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x5 = state_f2d_pc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x6 = state_f2d_ppc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x5 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_reg(x0, 0, state_reg(x0, 0) + state_reg(x0, 0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (x6 != 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x5 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_btb(x0, state_reg(x0, 0), 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (state_reg(x0, 0) == 0) if (x6 != 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        else if (x6 != 2) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 2);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    } else set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_epoch(x0, state_epoch(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x7 = state_btb(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_pc(x0, state_pc(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_ppc(x0, x7);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_pc(x0, x7);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 1) if (state_f2d_epoch(x0) == state_epoch(x0)) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x8 = state_f2d_pc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x9 = state_f2d_ppc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x8 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_reg(x0, 0, state_reg(x0, 0) + state_reg(x0, 0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (x9 != 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x8 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_btb(x0, state_reg(x0, 0), 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (state_reg(x0, 0) == 0) if (x9 != 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        else if (x9 != 2) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 2);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    } else set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_epoch(x0, state_epoch(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x10 = state_btb(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_pc(x0, state_pc(x0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_ppc(x0, x10);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_pc(x0, x10);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (state_f2d_valid(x0) == 1) if (state_f2d_epoch(x0) == state_epoch(x0)) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x11 = state_f2d_pc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      int x12 = state_f2d_ppc(x0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x11 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_reg(x0, 0, state_reg(x0, 0) + state_reg(x0, 0));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (x12 != 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x11 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        set_state_btb(x0, state_reg(x0, 0), 1);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (state_reg(x0, 0) == 0) if (x12 != 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        else if (x12 != 2) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_pc(x0, 2);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          set_state_epoch(x0, ~(state_epoch(x0)));[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    } else set_state_f2d_valid(x0, 0);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return x0];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /***************..." did not equal "...t ****************/[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  [bool Snippet(bool* x0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    bool x1 = x0[0];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    bool x2 = false;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    x0[1] = true;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x1) {} else x2 = true;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x2) x0[2] = true;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    else x0[2] = false;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return x0[2]];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /***************..." src/out/interpc_6.check.c (utils.scala:64)[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(lms.koika.MiniTest, org.scalatest.tools.Framework$$anon$1@2da75794, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMiniTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- mini stub[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- mini stub 2[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(lms.koika.InterpC0Test, org.scalatest.tools.Framework$$anon$1@2da75794, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mInterpC0Test:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- interp 5 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    x0[0] = 1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    [x0[1] = x0[1] + x0[1];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    int x1 = x0[0];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x1 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0] = 1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[1] = x0[1] + x0[1];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x1 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0] = 2;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x0[1] == 0) x0[0] = 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    int x2 = x0[0];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x2 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0] = 1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[1] = x0[1] + x0[1];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x2 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0] = 2;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x0[1] == 0) x0[0] = 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    int x3 = x0[0];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x3 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0] = 1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[1] = x0[1] + x0[1];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x3 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0] = 2;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x0[1] == 0) x0[0] = 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return x0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /*****************************************[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  End of C Generated Code[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  *******************************************/[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  int main(int argc, char *argv[]) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (argc != 2) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      printf("usage: %s <arg>\n", argv[0]);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      return 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m  [0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    int n[2] ;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    n[0] = 0 ;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    n[1] = 0 ;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    int* result = Snippet(n);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m  [0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    for (int i = 0; i < 2; i++)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      printf("%i", result[0]);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      printf("\n");[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m  [0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }]" did not equal "...0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    x0[0] = 1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    [int x1 = x0[1] + x0[1];[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    x0[1] = x1;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    x0[0] = 2;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (x1 == 0) x0[0] = 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return x0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /*****************************************[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  End of C Generated Code[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  *******************************************/[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  int main(int argc, char *argv[]) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    if (argc != 2) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      printf("usage: %s <arg>\n", argv[0]);[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      return 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    Snippet();[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    return 0;[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ]" src/out/interpc0_5.check.c (utils.scala:64)[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(lms.koika.InterpTest, org.scalatest.tools.Framework$$anon$1@2da75794, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mInterpTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- interp 4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- interp 5 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...{[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0(0) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      [x0(1) = x0(1) + x0(1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      val x1 = x0(0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x1 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(1) = x0(1) + x0(1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x1 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (x0(1) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          x0(0) = 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      val x2 = x0(0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x2 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(1) = x0(1) + x0(1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x2 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (x0(1) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          x0(0) = 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      val x3 = x0(0)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x3 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(1) = x0(1) + x0(1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x3 == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        if (x0(1) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m          x0(0) = 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        }][0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ..." did not equal "...{[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0(0) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      [val x1 = x0(1) + x0(1)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0(1) = x1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0(0) = 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x1 == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 0][0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ..." src/out/interp_5.check.scala (utils.scala:64)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- simplify 5 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "...0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0(1) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      [if (x0(0) == 0) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x0(0) == 1) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      if (x0(0) == 2) {[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m        x0(0) = 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      }][0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /*****..." did not equal "...0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0(1) = 1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      [x0(0) = 3][0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m      x0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m    }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  }[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  /*****..." src/out/interp_5s.check.scala (utils.scala:64)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 521 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 20[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 4, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 15, failed 5, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 5 TESTS FAILED ***[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	lms.koika.MiniTest[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	lms.koika.InterpTest[0m
+[0m[[0m[31merror[0m] [0m[0m	lms.koika.InterpC0Test[0m
+[0m[[0m[31merror[0m] [0m[0m	lms.koika.InterpCTest[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

@@ -2,7 +2,7 @@
 Emitting C Generated Code
 *******************************************/
 #include <stdlib.h>
-#include "state.h"
+#include <state.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>

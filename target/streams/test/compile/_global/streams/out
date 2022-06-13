@@ -1,0 +1,25 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:236:19: identifier expected but integer literal found.[0m
+[0m[[0m[31merror[0m] [0m[0m        val c = a[0][0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:237:1: ']' expected.[0m
+[0m[[0m[31merror[0m] [0m[0m        if (c)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:239:13: identifier expected but integer literal found.[0m
+[0m[[0m[31merror[0m] [0m[0m          a[1] = true[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:240:9: ']' expected but '}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m        }[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:243:13: identifier expected but integer literal found.[0m
+[0m[[0m[31merror[0m] [0m[0m          a[1] = false [0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:244:9: ']' expected but '}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m        }[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:245:11: identifier expected but integer literal found.[0m
+[0m[[0m[31merror[0m] [0m[0m        a[1][0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/nickydtricky/Desktop/TmpDirectory/lms-koika/src/test/scala/lms/koika/interpc.scala:246:7: ']' expected but '}' found.[0m
+[0m[[0m[31merror[0m] [0m[0m      }[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m8 errors found[0m
