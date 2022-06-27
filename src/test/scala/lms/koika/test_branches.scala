@@ -10,6 +10,7 @@ import lms.util.GraphUtil
 
 import Backend._
 
+// ignore this object for now
 object BranchFrontEnd extends Adapter {
 
 
