@@ -584,10 +584,28 @@ class GraphBuilderOpt extends GraphBuilder {
       }})
 
     // x[i] = y; ....; x => x[i] = y; ....; y    side condition: no write in-between!
-    case ("array_get", List(as:Exp,i:Exp)) =>
-      curEffects.get(as).flatMap({ case (lw, _) => findDefinition(lw) collect {
-        case Node(_, "array_set", List(_, i2: Exp, value: Exp), _) if i == i2 => value
-      }})
+
+    case ("array_get", List(as:Exp,i:Exp)) => {
+          def rec(x: Sym): Option[Exp] = {
+            findDefinition(x).flatMap({
+              case Node(_, "array_set", List(_, i2: Exp, value: Exp), es) =>
+                (i,i2) match {
+                  case _ if i == i2 => Some(value)
+                  case (Const(c),Const(c2)) if c != c2 && es.hdeps.size==1 =>
+                    rec(es.hdeps.toSeq.head)
+                  case _ => None
+                }
+              
+              // Trying a recursive call to rec
+              case Node(_, _, _, es) =>
+                rec(es.hdeps.toSeq.head)
+              
+              // TODO: should we allow skip over some?
+              case _ => None
+            })
+          }
+          curEffects.get(as).flatMap({ case (x, _) => rec(x) })
+        }
 
     case ("array_slice", List(as: Exp, Const(0), Const(-1))) => Some(as)
     case ("array_length", List(Def("NewArray", Const(n)::_))) =>
@@ -601,6 +619,24 @@ class GraphBuilderOpt extends GraphBuilder {
       Some(Const(as.length))
     case ("String.charAt", List(Const(as: String), Const(idx: Int))) =>
       Some(Const(as.charAt(idx)))
+
+    // the goal here is to apply the array optimization logic to lib-functions
+    // so, we separate into lib-function-getter and lib-function-setter
+    // could implement checking if struct is the same, but multiple structs haven't been implemented yet as per the writeup
+
+    // setter(struct, val1); setter(struct, val1) => setter(struct, val1); ()
+    case ("lib-function-setter", List(func: Exp, b, as: Exp, c)) if ({curEffects.get(as).flatMap({ case (lw, _) => findDefinition(lw)}) match {
+        case Some(Node(_, "lib-function-setter", List(v, _, _, _), _)) if (v == func) => true  
+        case _ => false
+      }
+    }) => Some(Const(()))
+
+    
+    case ("lib-function-getter", a) => {
+      println("GETTER:")
+      println(a)
+      None
+    }
 
     case ("!", List(Const(b: Boolean))) => Some(Const(!b))
     case ("==", List(Const(a: Double), _)) if a.isNaN => Some(Const(false))
