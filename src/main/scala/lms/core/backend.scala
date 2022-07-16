@@ -625,8 +625,8 @@ class GraphBuilderOpt extends GraphBuilder {
     // could implement checking if struct is the same, but multiple structs haven't been implemented yet as per the writeup
 
     // setter(struct, val1); setter(struct, val1) => setter(struct, val1); ()
-    case ("lib-function-setter", List(func: Exp, b, as: Exp, c)) if ({curEffects.get(as).flatMap({ case (lw, _) => findDefinition(lw)}) match {
-        case Some(Node(_, "lib-function-setter", List(v, _, _, _), _)) if (v == func) => true  
+    case ("lib-function-setter", List(func: Exp, field: Exp, b, as: Exp, c)) if ({curEffects.get(as).flatMap({ case (lw, _) => findDefinition(lw)}) match {
+        case Some(Node(_, "lib-function-setter", List(v, _, _, _, _), _)) if (v == func) => true  
         case _ => false
       }
     }) => Some(Const(()))
