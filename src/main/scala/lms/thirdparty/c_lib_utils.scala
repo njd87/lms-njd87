@@ -117,7 +117,25 @@ trait CCodeGenLibFunction extends ExtendedCCodeGen {
         if (index < last) emit(", ")
       }
       emit(")")
-    case _ => super.shallow(n)
+    case Node(s, "lib-function-getter", Const(m:String) :: Const(_tmp:String) :: Const(pkeys: Set[Int]) :: rhs, _) =>
+      val last = rhs.length - 1
+      emit(s"$m(");
+      rhs.zipWithIndex.foreach { case(r, index) =>
+        if (pkeys.contains(index)) emit("&")
+        shallow(r)
+        if (index < last) emit(", ")
+      }
+      emit(")")
+    case Node(s, "lib-function-setter", Const(m:String) :: Const(_tmp:String) :: Const(pkeys: Set[Int]) :: rhs, _) =>
+      val last = rhs.length - 1
+      emit(s"$m(");
+      rhs.zipWithIndex.foreach { case(r, index) =>
+        if (pkeys.contains(index)) emit("&")
+        shallow(r)
+        if (index < last) emit(", ")
+      }
+      emit(")")
+    case a => println(a); super.shallow(n)
   }
 }
 
