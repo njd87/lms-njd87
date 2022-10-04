@@ -2,18 +2,18 @@
 
 Struct optimizations were made for getter and setter functions in the same way we optimized arrays. For any struct, s, any get statement that precedes another get statement of the same attribute will get overwritten.
 
-'''scala
+```scala
 // setter(struct, val1); setter(struct, val1) => setter(struct, val1); ()
 case ("lib-function-setter", List(func: Exp, field: Exp, b, as: Exp, v1)) if ({curEffects.get(as).flatMap({ case (lw, _) => findDefinition(lw)}) match {
         case Some(Node(_, "lib-function-setter", List(f, _, _, _, v2), _)) if (f == func) & (v1 == v2) => true  
         case _ => false
     }
     }) => Some(Const(()))
-'''
+```
 
 Similarly, setter statements that set on get statements result in a blank block.
 
-'''scala
+```scala
 // setter(struct, val1) = getter_val1(struct) => ()   side condition: no write in-between!
     case ("lib-function-setter", List(func_name: Exp, field: Exp, b, as: Exp, v1: Exp)) => {
       curEffects.get(as) match {
@@ -25,13 +25,13 @@ Similarly, setter statements that set on get statements result in a blank block.
         case None => None
       }
     }
-'''
+```
 
 See also the "state.h" header file in LMS-Clean that adds a struct that LMS-Koika can work with.
 
 Code generation for setters and getters were also added:
 
-'''scala
+```scala
 case Node(s, "lib-function-getter", Const(m:String) :: Const(_tmp:String) :: Const(pkeys: Set[Int]) :: rhs, _) =>
       val last = rhs.length - 1
       emit(s"$m(");
@@ -51,12 +51,12 @@ case Node(s, "lib-function-getter", Const(m:String) :: Const(_tmp:String) :: Con
       }
       emit(")")
     case a => println(a); super.shallow(n)
-'''
+```
 
 # Nested-If Optimization
 Often times when working with the updated registration functions in interpc, we would get nested-if statements with arrays that resulted in something like the following (from interpc0_5)
 
-'''c
+```c
 
     int* Snippet(int* x0) {
       x0[0] = 1;
@@ -84,11 +84,11 @@ Often times when working with the updated registration functions in interpc, we 
       }
       return x0;
     }
-'''
+```
 
 So, in the backend, we add a recursive statment to our array-get check to resemble the following:
 
-'''scala
+```scala
 case ("array_get", List(as:Exp,i:Exp)) => {
           def rec(x: Sym): Option[Exp] = {
             findDefinition(x).flatMap({
@@ -109,11 +109,11 @@ case ("array_get", List(as:Exp,i:Exp)) => {
           }
           curEffects.get(as).flatMap({ case (x, _) => rec(x) })
         }
-'''
+```
 
 So, instead of checking for values in the array like our nested if-statement example shows, the code preemptivley goes through and validates the values at each index (in other words, we don't have to check for values in the array if we know they are not important for the return value). So, interpc0_5 now returns the following:
 
-'''c
+```c
 int* Snippet(int* x0) {
       x0[0] = 1;
       int x1 = x0[1] + x0[1];
@@ -122,12 +122,12 @@ int* Snippet(int* x0) {
       if (x1 == 0) x0[0] = 0;
       return x0;
     }
-'''
+```
 
 # Next Steps
 Unfortunatley, there is still many unanswer questions on how to proceed. One problem we attempted to address in this research project is a question on how to optimize if-statments on Rep[Boolean] values. For example, let's say we have the following:
 
-'''scala
+```scala
 if (arg) {
   aBlock;
 } else {
@@ -135,11 +135,11 @@ if (arg) {
 }
 cBlock;
 dBlock;
-'''
+```
 
 where arg represents a Rep[Boolean] value. Our code, as of right now, has no way of telling whether or not aBlock or bBlock needs to be run, so it keeps the if-statement as it is. Going forward, we suggest using CPS to rewrite the code above as:
 
-'''scala
+```scala
 if (arg) {
   aBlock;
   cBlock;
@@ -149,6 +149,6 @@ if (arg) {
   cBlock;
   dBlock;
 }
-'''
+```
 
 then finding the output value for each segment of the if-statement, writing only what needs to be written.
