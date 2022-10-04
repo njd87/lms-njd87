@@ -3,7 +3,7 @@
 Struct optimizations were made for getter and setter functions in the same way we optimized arrays. For any struct, s, any get statement that precedes another get statement of the same attribute will get overwritten.
 
 ```scala
-// setter(struct, val1); ...; setter(struct, val1) => setter(struct, val1); ()
+// setter(struct, val1); setter(struct, val1) => setter(struct, val1); ()
 case ("lib-function-setter", List(func: Exp, field: Exp, b, as: Exp, v1)) if ({curEffects.get(as).flatMap({ case (lw, _) => findDefinition(lw)}) match {
         case Some(Node(_, "lib-function-setter", List(f, _, _, _, v2), _)) if (f == func) & (v1 == v2) => true  
         case _ => false
